@@ -1,0 +1,335 @@
+{
+  "CanPublish": true,
+  "Creator": null,
+  "DisplayName": null,
+  "Id": "736076b3-06d1-4612-951b-aa1500f16156",
+  "LastModified": "11-Apr-19 13:33",
+  "LastPublished": "26-Mar-19 00:37",
+  "Modifier": null,
+  "Name": "Element",
+  "States": [
+    {
+      "Id": "b07e229c-cc83-4ee7-be7d-aa1b0126bd28",
+      "Name": "In Production Planning",
+      "DisplayName": "In Production Planning",
+      "IsDataFetched": false,
+      "StateIndex": 0,
+      "Operations": [
+        {
+          "Id": "36e07858-00e2-456f-a6fd-aa1b0126bd28",
+          "OperationType": 0,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "8bc5822d-bd95-42ed-9fc8-aa1b0126bd28",
+          "OperationType": 1,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "491f15e1-0fda-4eca-92a3-aa1b0126bd28",
+          "OperationType": 2,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "744e1337-63ca-4325-ba71-aa1b0126bd28",
+          "OperationType": 3,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": [
+            {
+              "Id": "f42878ac-5ae5-47d0-b9e2-aa1b0126bd28",
+              "Name": "Start Reinforcement",
+              "DisplayName": null,
+              "ActionType": 1,
+              "TargetStateId": "3ca41433-1244-4938-bc56-aa1b0126bd28",
+              "SelectedProgramId": "00000000-0000-0000-0000-000000000000",
+              "AllowPromoteOnScan": false,
+              "ActionCommandsEdited": false,
+              "ValidationRulesEdited": false,
+              "Order": 0,
+              "UpdateAttributesCommands": [
+                {
+                  "Id": "27759cc3-c7f7-4b3e-995a-aa1b0126bd28",
+                  "Name": "Update Production Planned Date",
+                  "CommandData": [
+                    {
+                      "Id": "e453bfbf-e572-4a86-b306-aa1b0126bd28",
+                      "AttributeId": "cb921e1b-586f-4b64-8638-a51300e80292",
+                      "AttributeType": 5,
+                      "PicklistOptions": [],
+                      "AttributeValue": "$Current_Date_Time$",
+                      "Multiselect": false
+                    }
+                  ]
+                }
+              ],
+              "SendRequestCommands": [],
+              "DisconnectCommands": [],
+              "ProgramCommands": [],
+              "SendNotificationCommands": [],
+              "AttributeBasedValidationRules": [
+                {
+                  "Id": "831c4785-8fba-4263-af26-aa2900c84cfa",
+                  "AttributeId": "37a5e969-e8cc-4e95-976d-aa1b01336b3e",
+                  "AttributeType": 10,
+                  "Condition": 16,
+                  "FirstValue": null,
+                  "SecondValue": null,
+                  "ErrorMessage": "Please select reinforcement user",
+                  "Index": 0,
+                  "PicklistOptions": null,
+                  "MultiSelectPicklist": false
+                }
+              ],
+              "RelationshipBasedValidationRules": [],
+              "CreateMinor": true
+            }
+          ]
+        },
+        {
+          "Id": "1a395fa5-1baf-488c-815d-aa1b0126bd28",
+          "OperationType": 4,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "74fc44b4-c283-4781-9abd-aa1b0126bd28",
+          "OperationType": 5,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "450bc28d-3406-4fcf-9f34-aa1b0126bd28",
+          "OperationType": 6,
+          "RoleIds": [],
+          "Actions": []
+        },
+        {
+          "Id": "d5970b53-61ba-4ed9-8a21-aa1b0126bd28",
+          "OperationType": 7,
+          "RoleIds": [],
+          "Actions": []
+        },
+        {
+          "Id": "baddb310-70e4-4dd8-bfe8-aa1b0126bd28",
+          "OperationType": 8,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "6e2cc9fe-090f-490c-ba0e-aa1b0126bd28",
+          "OperationType": 9,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "5f34d205-5198-4e2c-8f85-aa1b0126bd28",
+          "OperationType": 10,
+          "RoleIds": [],
+          "Actions": []
+        }
+      ],
+      "ViewableAttributesType": 2,
+      "EditableAttributesType": 2,
+      "ViewableAttributes": null,
+      "EditableAttributes": null
+    },
+    {
+      "Id": "3ca41433-1244-4938-bc56-aa1b0126bd28",
+      "Name": "In Reinforcement",
+      "DisplayName": "In Reinforcement",
+      "IsDataFetched": false,
+      "StateIndex": 1,
+      "Operations": [
+        {
+          "Id": "08abfd6b-810a-4317-afd1-aa1b0126bd28",
+          "OperationType": 0,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd",
+            "3a0a4d06-63d9-43d7-809b-aa1500f41de9"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "4a5252e3-d185-4703-bef6-aa1b0126bd28",
+          "OperationType": 1,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd",
+            "3a0a4d06-63d9-43d7-809b-aa1500f41de9"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "72db4621-636c-4a89-a4cb-aa1b0126bd28",
+          "OperationType": 2,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "a73167ad-9506-4a81-9050-aa1b0126bd28",
+          "OperationType": 3,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd",
+            "3a0a4d06-63d9-43d7-809b-aa1500f41de9"
+          ],
+          "Actions": [
+            {
+              "Id": "9dc9117a-3d07-4a0e-ad3b-aa1b0126bd28",
+              "Name": "Send to Steelyard",
+              "DisplayName": null,
+              "ActionType": 1,
+              "TargetStateId": "a897e9ee-b840-43c5-b7cc-aa1b0126bd28",
+              "SelectedProgramId": "00000000-0000-0000-0000-000000000000",
+              "AllowPromoteOnScan": false,
+              "ActionCommandsEdited": false,
+              "ValidationRulesEdited": false,
+              "Order": 0,
+              "UpdateAttributesCommands": [
+                {
+                  "Id": "c3816c3f-df31-42eb-afdf-aa1b0126bd28",
+                  "Name": "Update Steel Cage Ready Date",
+                  "CommandData": [
+                    {
+                      "Id": "5021623c-568b-459f-b132-aa1b0126bd28",
+                      "AttributeId": "49365a0f-e0c8-4442-a7f3-aa15010392f5",
+                      "AttributeType": 5,
+                      "PicklistOptions": [],
+                      "AttributeValue": "$Current_Date_Time$",
+                      "Multiselect": false
+                    }
+                  ]
+                }
+              ],
+              "SendRequestCommands": [],
+              "DisconnectCommands": [],
+              "ProgramCommands": [],
+              "SendNotificationCommands": [],
+              "AttributeBasedValidationRules": [
+                {
+                  "Id": "6a5360bc-f374-4e39-920c-aa2900e7e6ca",
+                  "AttributeId": "674661de-d11b-4aec-999d-aa1b0133a768",
+                  "AttributeType": 10,
+                  "Condition": 16,
+                  "FirstValue": null,
+                  "SecondValue": null,
+                  "ErrorMessage": "Please select production engineer",
+                  "Index": 0,
+                  "PicklistOptions": null,
+                  "MultiSelectPicklist": false
+                }
+              ],
+              "RelationshipBasedValidationRules": [
+                {
+                  "Id": "606a46b3-88fb-4a29-b3c5-aa1b0126bd28",
+                  "Relationship": "b21884ad-a270-4e7b-98cb-aa150129176b",
+                  "Condition": 1,
+                  "Value": true,
+                  "ErrorMessage": "Please connect with steelyard",
+                  "OrderIndex": 0
+                }
+              ],
+              "CreateMinor": true
+            }
+          ]
+        },
+        {
+          "Id": "a9f937d2-86b2-43a2-b0b2-aa1b0126bd28",
+          "OperationType": 4,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd",
+            "3a0a4d06-63d9-43d7-809b-aa1500f41de9"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "c781741d-89a8-4b12-a660-aa1b0126bd28",
+          "OperationType": 5,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd",
+            "3a0a4d06-63d9-43d7-809b-aa1500f41de9"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "4172fc6e-91f5-4f6b-a93e-aa1b0126bd28",
+          "OperationType": 6,
+          "RoleIds": [],
+          "Actions": []
+        },
+        {
+          "Id": "260c21bc-ca41-492d-9aed-aa1b0126bd28",
+          "OperationType": 7,
+          "RoleIds": [],
+          "Actions": []
+        },
+        {
+          "Id": "cf572914-591e-477d-aa9c-aa1b0126bd28",
+          "OperationType": 8,
+          "RoleIds": [
+            "74084dfb-783e-482f-8ad9-aa1500f400bd"
+          ],
+          "Actions": []
+        },
+        {
+          "Id": "339e2f31-6e57-4f8c-b06f-aa1b0126bd28",
+          "OperationType": 9,
+          "RoleIds": [],
+          "Actions": []
+        },
+        {
+          "Id": "ad615201-7724-46ca-85ad-aa1b0126bd28",
+          "OperationType": 10,
+          "RoleIds": [],
+          "Actions": []
+        }
+      ],
+      "ViewableAttributesType": 1,
+      "EditableAttributesType": 1,
+      "ViewableAttributes": [
+        "564501eb-2145-44ee-9793-aa15010457b6",
+        "bbe19bf1-6d82-4c7b-8717-aa150105b30c",
+        "220d7ecd-0715-4fed-abe3-aa1700b5faed",
+        "37a5e969-e8cc-4e95-976d-aa1b01336b3e",
+        "39a0f78c-74da-4c04-b8ee-a51300e7b6a3",
+        "c9fcd65c-2bf6-409f-9519-a51300e7c829",
+        "c2476bf4-93f3-4119-9b5a-aa1500fa9c2f",
+        "674661de-d11b-4aec-999d-aa1b0133a768",
+        "a4e2128a-9865-442b-8c1e-aa1d007e0789",
+        "b2e63cc0-a356-41e3-a6a2-aa1d007c188f",
+        "d23df226-8194-48c9-b9a1-aa2900b52d5d",
+        "cc6e8a1d-e7e0-444f-af21-aa15010423c0",
+        "6643d4bb-c37d-4165-aaa1-aa150104499c"
+      ],
+      "EditableAttributes": [
+        "39a0f78c-74da-4c04-b8ee-a51300e7b6a3",
+        "c9fcd65c-2bf6-409f-9519-a51300e7c829",
+        "564501eb-2145-44ee-9793-aa15010457b6",
+        "220d7ecd-0715-4fed-abe3-aa1700b5faed",
+        "674661de-d11b-4aec-999d-aa1b0133a768",
+        "b2e63cc0-a356-41e3-a6a2-aa1d007c188f",
+        "a4e2128a-9865-442b-8c1e-aa1d007e0789",
+        "d23df226-8194-48c9-b9a1-aa2900b52d5d"
+      ]
+    }
+  ]
+}
