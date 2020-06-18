@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 1vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +35,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Button-group {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.canvas {
+  height: 40vh;
+  border: 1px blue solid;
+  text-align: initial;
+  margin: 0 10px;
 }
