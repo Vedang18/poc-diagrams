@@ -11,9 +11,11 @@ import { AdvancedPortModel, PortModelOptions } from './AdvancedPortModel';
 import { AdvancedLinkFactory } from './AdvancedLinkFactory';
 import elements from '../../resource/elements';
 import { AdvancedLinkModel } from './AdvancedLinkModel';
+import { Point } from '@projectstorm/geometry';
 
-const colors= ['rgb(192,0,255)','rgb(255,0,192)','rgb(192,255,0)',
-            'rgb(0,255,192)','rgb(0,192,255)','rgb(255,192,0)'];
+const colors = ['rgb(192,0,255)', 'rgb(255,0,192)', 'rgb(192,255,0)',
+    'rgb(0,255,192)', 'rgb(0,192,255)', 'rgb(255,192,0)'];
+
 function createModelRenders(pathfinding: any) {
     const inputElements = elements();
     let models: any[] = [];
@@ -58,7 +60,9 @@ function createModelRenders(pathfinding: any) {
             let dPort = tNode.node.addPort(new AdvancedPortModel(options));
             let sNode = nodesmap.get(l.nodeId);
             if (sNode && sNode.node) {
-                let link = sNode.node.getOutPorts()[0].link(dPort, pathfinding);
+                let sPorts = sNode.node.getOutPorts();
+                let sPort = sPorts.find((s: any) => s.getPortId() === l.Id);
+                let link = sPort.link(dPort);
                 link.addLabel(
                     new DefaultLabelModel({
                         label: l.Name,
@@ -76,10 +80,17 @@ function createModelRenders(pathfinding: any) {
 
     models.push(...nodes);
     models.push(...links);
+    console.log(models);
     return models;
 
 }
 
+/*
+TODO: 
+Render multiple ports & back arrows
+Adjust to UI
+
+*/
 export default function DiagramUI() {
     //1) setup the diagram engine
     var engine = createEngine();
@@ -112,7 +123,9 @@ export default function DiagramUI() {
     // });
 
     const sw = window.innerWidth;
-    const partf = sw / (nodes.length-1);
+    const partf = sw / (nodes.length - 1);
+
+    //TODO: Set multiple backward & forward linking in loop to avoid overlap
     nodes.forEach((n, i) => {
         if (n instanceof DefaultNodeModel) {
             n.setPosition(((i + 1) * partf), 50);
@@ -120,13 +133,14 @@ export default function DiagramUI() {
         else if (n instanceof AdvancedLinkModel) {
             let l: AdvancedLinkModel = n;
             if (l.IsRev()) {
-                let tx = l.getTargetPort().getPosition().x;
-                let x = l.getSourcePort().getPosition().x;
+             l.setColor('red');
+                let tx = l.getLastPoint().getX();// .getPosition().x;
+                let x = l.getFirstPoint().getPosition().x;
                 let y = l.getSourcePort().getPosition().y;
                 //@ts-ignore
                 l.getLabels()[0].getOptions().offsetY = 0;
-                l.point(tx + 20, y + 70);
-                l.point(x + 40, y + 70);
+                l.point(tx + 10 , y + 70);
+                l.point(x+115, y + 70);
 
             }
 
@@ -138,7 +152,7 @@ export default function DiagramUI() {
 
 
     model.addAll(...nodes);
-    model.setLocked(true);
+    //model.setLocked(true);
     //@ts-ignore
     // load model into engine
     engine.setModel(model);

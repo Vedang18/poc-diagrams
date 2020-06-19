@@ -8,6 +8,7 @@ import { FlowChartWithState, IPortDefaultProps, LinkDefault } from "@mrblenny/re
 
 import * as actions from '@mrblenny/react-flow-chart/src/container/actions'
 import { FlowChart, IChart, INodeInnerDefaultProps } from '@mrblenny/react-flow-chart/src';
+import elements from '../../resource/elements';
 
 const CanvasOuterCustom = styled.div`
   position: relative;
@@ -102,6 +103,62 @@ const NodeInnerCustom = ({ node, config }: INodeInnerDefaultProps) => {
 
         </div>
     )
+
+}
+
+function createModelRenders() {
+    const inputElements = elements();
+    let models: any[] = [];
+    let links: any[] = [];
+    let nodes: any[] = [];
+    let ports: any[] = [];
+    let nodesmap: Map<string, any> = new Map();
+
+    // Create nodes & out ports
+    inputElements.forEach(e => {
+        let node :any = {id:e.Id, type:e.DisplayName};
+        if (e.Actions.length > 0) {
+            for (let a = 0; a < e.Actions.length; a++) {
+                //Add out port for all
+                node['port'+a]={id:e.Actions[a].Id+'r',type:'right'};
+                // To add in port & link
+                ports.push({ ...e.Actions[a], 'nodeId': e.Id });
+                nodes.push(node);
+            }
+        }
+        //nodes.push();
+        nodesmap.set(e.Id, { 'element': e, 'node': node });
+    });
+
+    // Create in ports & link
+    ports.forEach(l => {
+        let tNode = nodesmap.get(l.TargetStateId);
+        if (tNode && tNode.node) {
+            let dPort = tNode.node['porto']={id:l.Id+'l',type:'left'};
+            let sNode = nodesmap.get(l.nodeId);
+            if (sNode && sNode.node) {
+                let link = {
+                    id: "link1",
+                    from: {
+                        nodeId: "node1",
+                        portId: "port1"
+                    },
+                    properties: {
+                        label: 'link label',
+                    },
+                    to: {
+                        nodeId: "node2",
+                        portId: "port1"
+                    },
+                }
+                links.push(link);
+            }
+        }
+    })
+
+    models.push(...nodes);
+    models.push(...links);
+    return models;
 
 }
 

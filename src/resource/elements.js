@@ -16,7 +16,7 @@ const elements = (lifeCycle) => {
                     "TargetStateId": "3ca41433-1244-4938-bc56-aa1b0126bd28",
                 },
                 // {
-                //     "Id": "f42878ac-5ae5-47d0-b9e2-aa1b0126bd28",
+                //     "Id": "f42878ac-5ae5-47d0-b9e2-aa1b0126bd29",
                 //     "Name": "Start Reinforcement",
                 //     "DisplayName": null,
                 //     "TargetStateId": "3ca41433-1244-4938-bc56-aa1b0126bd28",
@@ -47,7 +47,7 @@ const elements = (lifeCycle) => {
             "Actions": [
                 {
                     "Id": "9dc9117a-3d07-4a0e-ad3b-aa1b0126bd28",
-                    "Name": "Send to Steelyard",
+                    "Name": "Back to Planning",
                     "DisplayName": null,
                     "ActionType": 1,
                     "TargetStateId": "b07e229c-cc83-4ee7-be7d-aa1b0126bd28",
